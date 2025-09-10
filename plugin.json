@@ -1,0 +1,20 @@
+{
+	"name"        : "MyVisitorGenerator",
+	"version"     : "0.0.1",
+	"description" : "wp 记录生成",
+	"keywords"    : [
+		"development",
+		"tools"
+	],
+	"license"     : "GPL v3+",
+	"homepage"    : "https://matomo.org",
+	"require"     : {
+		"matomo" : ">=5.2.0-b1,<6.0.0-b1"
+	},
+	"support"     : {
+		"source" : ""
+	},
+	"authors"     : [
+	],
+	"category"    : "development"
+}

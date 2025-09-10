@@ -1,0 +1,6 @@
+/testData/
+/downloadCache/
+/vendor/
+/.build/
+/.phpstan.txt
+/nohup.out
