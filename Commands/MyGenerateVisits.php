@@ -21,7 +21,7 @@
             'database' => 2,
         ];
 
-//      ./console visitorgenerator:my-generate-visits-db --idsite=1 --tokenauth=c5bb885c94da01883e26573827c63874 --wpurl="http://dev6080/" --starttime="2025-06-10" --endtime="2025-08-10" --lowuv=0 --yearuv=10000 --chunk=200 --pagename="kokokogames" --mysqlhost="127.0.0.1" --mysqlusername="root" --mysqlpassword="root" --mysqlport=3306 --mysqldb="wp_te_10100"
+//      ./console visitorgenerator:my-generate-visits-db --idsite=1 --tokenauth=c5bb885c94da01883e26573827c63874 --wpurl="http://dev6080/" --starttime="2025-07-27" --endtime="2025-09-10" --lowuv=0 --yearuv=500 --pagename="kokokogames" --mysqlhost="127.0.0.1" --mysqlusername="root" --mysqlpassword="root" --mysqlport=3306 --mysqldb="wp_te_10100"
         protected function configure()
         {
             $this->setName('visitorgenerator:my-generate-visits-db');
@@ -60,7 +60,7 @@
             $endtime   = $this->getOptionWithException('endtime', 'no $endtime');
             $lowuv     = $this->getOptionWithDefault('lowuv', 0);
             $yearuv    = $this->getOptionWithDefault('yearuv', 10000);
-            $chunk     = $this->getOptionWithDefault('chunk', 200);
+            $chunk     = $this->getOptionWithDefault('chunk', 10);
 
             $redisnamespace = $this->getOptionWithDefault('redisnamespace', 'matomo_cache');
             $redishost      = $this->getOptionWithDefault('redishost', '127.0.0.1');
