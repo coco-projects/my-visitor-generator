@@ -21,7 +21,7 @@
             'database' => 2,
         ];
 
-//      ./console visitorgenerator:my-generate-visits-db --idsite=1 --tokenauth=c5bb885c94da01883e26573827c63874 --wpurl="http://dev6080/" --starttime="2025-07-27" --endtime="2025-09-10" --lowuv=0 --yearuv=500 --pagename="kokokogames" --mysqlhost="127.0.0.1" --mysqlusername="root" --mysqlpassword="root" --mysqlport=3306 --mysqldb="wp_te_10100"
+//      ./console visitorgenerator:my-generate-visits-db --idsite=1 --tokenauth=c5bb885c94da01883e26573827c63874 --wpurl="http://dev6080/" --starttime="2025-09-8" --endtime="2025-09-11" --lowuv=1000 --yearuv=1000 --pagename="kokokogames" --mysqlhost="127.0.0.1" --mysqlusername="root" --mysqlpassword="root" --mysqlport=3306 --mysqldb="wp_te_10100"
         protected function configure()
         {
             $this->setName('visitorgenerator:my-generate-visits-db');
@@ -161,8 +161,11 @@
 
                         $_this->client->logInfo('命令：' . $commond);
                         $_this->client->logInfo('发送中，共(' . $_this->client->getUvsCount() . ')个uv,当前第(' . (($k * $_this->client->chunkSize) + 1) . '-' . (($k + 1) * $_this->client->chunkSize) . ')个,第' . ($k1 + 1) . '个uv,共' . $uv->getPvCount() . '个pv,uv访问时间:' . $uv->viewTime,);
-                        exec($commond);
-                        $_this->client->logInfo('uv发送成功');
+
+                        $output = system($commond, $code);
+                        $_this->client->logInfo($output);
+
+                        $_this->client->logInfo('uv发送完成');
                     }
 
                 });
