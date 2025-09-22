@@ -101,9 +101,9 @@
             'dev_requirement' => false,
         ),
         'coco-project/wp' => array(
-            'pretty_version' => 'v1.0.33',
-            'version' => '1.0.33.0',
-            'reference' => '40b8506eeb717d117a55c4efd56538fe2e5978bf',
+            'pretty_version' => 'v1.0.34',
+            'version' => '1.0.34.0',
+            'reference' => '74ea35058b069dc7b65083eef4510fffd37bad62',
             'type' => 'library',
             'install_path' => __DIR__ . '/../coco-project/wp',
             'aliases' => array(),

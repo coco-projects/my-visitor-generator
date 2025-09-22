@@ -36,5 +36,5 @@ return array(
     'Coco\\magicAccess\\' => array($vendorDir . '/coco-project/magic-access/src'),
     'Coco\\logger\\' => array($vendorDir . '/coco-project/logger/src'),
     'Coco\\htmlBuilder\\' => array($vendorDir . '/coco-project/html-builder/src'),
-    'Coco\\examples\\' => array($vendorDir . '/coco-project/html-builder/examples', $vendorDir . '/coco-project/logger/examples', $vendorDir . '/coco-project/magic-access/examples', $vendorDir . '/coco-project/simple-page-downloader/examples', $vendorDir . '/coco-project/snowflake/examples', $vendorDir . '/coco-project/table-manager/examples', $vendorDir . '/coco-project/timer/examples', $vendorDir . '/coco-project/tree/examples', $vendorDir . '/coco-project/matomo-client/examples', $vendorDir . '/coco-project/wp/examples'),
+    'Coco\\examples\\' => array($vendorDir . '/coco-project/html-builder/examples', $vendorDir . '/coco-project/logger/examples', $vendorDir . '/coco-project/magic-access/examples', $vendorDir . '/coco-project/matomo-client/examples', $vendorDir . '/coco-project/simple-page-downloader/examples', $vendorDir . '/coco-project/snowflake/examples', $vendorDir . '/coco-project/table-manager/examples', $vendorDir . '/coco-project/timer/examples', $vendorDir . '/coco-project/tree/examples', $vendorDir . '/coco-project/wp/examples'),
 );
