@@ -382,16 +382,16 @@
         },
         {
             "name": "coco-project/wp",
-            "version": "v1.0.34",
+            "version": "v1.0.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coco-projects/wp.git",
-                "reference": "74ea35058b069dc7b65083eef4510fffd37bad62"
+                "reference": "77c63e4f606c370ab7b55e65779c07e2339b581d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coco-projects/wp/zipball/74ea35058b069dc7b65083eef4510fffd37bad62",
-                "reference": "74ea35058b069dc7b65083eef4510fffd37bad62",
+                "url": "https://api.github.com/repos/coco-projects/wp/zipball/77c63e4f606c370ab7b55e65779c07e2339b581d",
+                "reference": "77c63e4f606c370ab7b55e65779c07e2339b581d",
                 "shasum": ""
             },
             "require": {
@@ -419,9 +419,9 @@
             ],
             "support": {
                 "issues": "https://github.com/coco-projects/wp/issues",
-                "source": "https://github.com/coco-projects/wp/tree/v1.0.34"
+                "source": "https://github.com/coco-projects/wp/tree/v1.0.35"
             },
-            "time": "2025-09-22T06:37:07+00:00"
+            "time": "2025-09-23T01:50:36+00:00"
         },
         {
             "name": "fakerphp/faker",
