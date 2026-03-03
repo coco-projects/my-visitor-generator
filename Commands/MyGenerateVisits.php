@@ -153,17 +153,32 @@
 
                         $piwik = realpath(dirname(dirname(dirname(__DIR__)))) . '/cli_insert.php';
 
-                        $commond = implode(' ', [
+                        $command = implode(' ', [
                             'php',
                             $piwik,
                             $redisConfigBase64,
                         ]);
 
-                        $_this->client->logInfo('命令：' . $commond);
+                        $_this->client->logInfo('命令：' . $command);
                         $_this->client->logInfo('发送中，共(' . $_this->client->getUvsCount() . ')个uv,当前第(' . (($k * $_this->client->chunkSize) + 1) . '-' . (($k + 1) * $_this->client->chunkSize) . ')个,第' . ($k1 + 1) . '个uv,共' . $uv->getPvCount() . '个pv,uv访问时间:' . $uv->viewTime,);
 
-                        $output = system($commond, $code);
-                        $_this->client->logInfo($output);
+                        exec($command, $output, $status);
+
+                        $result = [
+                            "output" => $output,
+                            "status" => $status,
+                        ];
+
+                        if ($status === 0)
+                        {
+                            $msg = "执行成功: 【" . $command . '】【' . json_encode($result, 256) . '】';
+                        }
+                        else
+                        {
+                            $msg = "执行失败: 【" . $command . '】【' . json_encode($result, 256) . '】';
+                        }
+
+                        $_this->client->logInfo($msg);
 
                         $_this->client->logInfo('uv发送完成');
                     }
