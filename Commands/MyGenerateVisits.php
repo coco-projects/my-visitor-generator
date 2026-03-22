@@ -2,6 +2,7 @@
 
     namespace Piwik\Plugins\MyVisitorGenerator\Commands;
 
+    use Coco\timer\Timer;
     use Piwik\Plugin\ConsoleCommand;
     use Piwik\Plugins\Marketplace\Api\Exception;
     use Coco\wp\Manager;
@@ -12,14 +13,16 @@
 
     class MyGenerateVisits extends ConsoleCommand
     {
-        public string $token       = '';
-        public array  $redisConfig = [
+        public string $token        = '';
+        public array  $redisConfig  = [
             'host'     => '127.0.0.1',
             'port'     => 6379,
             'password' => '',
             'key'      => 'visitors_records',
             'database' => 2,
         ];
+        public Timer  $timer;
+        public int    $totalUvCount = 0;
 
 //      ./console visitorgenerator:my-generate-visits-db --idsite=1 --tokenauth=c5bb885c94da01883e26573827c63874 --wpurl="http://dev6080/" --starttime="2025-09-8" --endtime="2025-09-11" --lowuv=1000 --yearuv=1000 --pagename="kokokogames" --mysqlhost="127.0.0.1" --mysqlusername="root" --mysqlpassword="root" --mysqlport=3306 --mysqldb="wp_te_10100"
         protected function configure()
@@ -51,6 +54,9 @@
 
         protected function doExecute(): int
         {
+            $this->timer = new Timer();
+            $this->timer->start();
+
             $idsite    = $this->getOptionWithException('idsite', 'no $idsite');
             $tokenauth = $this->getOptionWithException('tokenauth', 'no $tokenauth');
 
@@ -180,9 +186,16 @@
 
                         $_this->client->logInfo($msg);
 
-                        $_this->client->logInfo('uv发送完成');
+                        $this->totalUvCount++;
+                        $_this->client->logInfo(implode(',', [
+                            '速度：' . $this->totalUvCount / $this->timer->totalTime() . ' 个/S',
+                            '累计发送次数：' . $this->totalUvCount,
+                            '累计耗时：' . $this->timer->totalTime(),
+                            '当前内存：' . $this->timer->getTotalMemory(),
+                            '最高内存：' . $this->timer->getTotalMemoryPeak(),
+                        ]));
+                        $_this->client->logInfo('【----------uv发送完成----------】');
                     }
-
                 });
 
             };
