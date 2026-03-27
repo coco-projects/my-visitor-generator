@@ -122,7 +122,7 @@
         {
             return function(VisitorGeneratorGeneral $_this) use ($manager) {
 
-                MatomoWebApiClient::initLogger('VisitorGeneratorByInsertToDb', $_this->enableEchoLog);
+                MatomoWebApiClient::initLogger('Visitor', $_this->enableEchoLog);
 
                 $_this->client = new MatomoClient($_this->siteId);
                 $_this->client->setChunkSize($_this->chunkSize);
@@ -139,7 +139,6 @@
         public function writeRecordFunc(Manager $manager): \Closure
         {
             return function(VisitorGeneratorGeneral $_this) use ($manager) {
-
                 $_this->client->eachChunks(function($uvsChunk, $k) use (&$_this, $manager) {
 
                     $redisClient = $manager->getRedisClient();
@@ -165,7 +164,6 @@
                             $redisConfigBase64,
                         ]);
 
-                        $_this->client->logInfo('命令：' . $command);
                         $_this->client->logInfo('发送中，共(' . $_this->client->getUvsCount() . ')个uv,当前第(' . (($k * $_this->client->chunkSize) + 1) . '-' . (($k + 1) * $_this->client->chunkSize) . ')个,第' . ($k1 + 1) . '个uv,共' . $uv->getPvCount() . '个pv,uv访问时间:' . $uv->viewTime,);
 
                         exec($command, $output, $status);
@@ -183,21 +181,25 @@
                         {
                             $msg = "执行失败: 【" . $command . '】【' . json_encode($result, 256) . '】';
                         }
-
-                        $_this->client->logInfo($msg);
+//                        $_this->client->logInfo($msg);
 
                         $this->totalUvCount++;
+
                         $_this->client->logInfo(implode(',', [
                             '速度：' . $this->totalUvCount / $this->timer->totalTime() . ' 个/S',
                             '累计发送次数：' . $this->totalUvCount,
+                        ]));
+
+                        $_this->client->logInfo(implode(',', [
                             '累计耗时：' . $this->timer->totalTime(),
                             '当前内存：' . $this->timer->getTotalMemory(),
                             '最高内存：' . $this->timer->getTotalMemoryPeak(),
                         ]));
-                        $_this->client->logInfo('【----------uv发送完成----------】');
+
+                        $_this->client->logInfo('【--------------------uv发送完成--------------------】');
+                        $_this->client->logInfo('');
                     }
                 });
-
             };
         }
 
@@ -211,7 +213,6 @@
 
             return $value;
         }
-
 
         protected function getOptionWithException(string $name, string $msg)
         {

@@ -209,7 +209,7 @@
         {
             $this->container->set('mysqlClient', function(Container $container) {
 
-                $registry = new TableRegistry($this->mysqlDb, $this->mysqlHost, $this->mysqlUsername, $this->mysqlPassword, $this->mysqlPort,);
+                $registry = TableRegistry::initMysqlClient($this->mysqlDb, $this->mysqlHost, $this->mysqlUsername, $this->mysqlPassword, $this->mysqlPort,);
 
                 $logName = 'wp-log';
                 $registry->setStandardLogger($logName);
@@ -514,25 +514,26 @@
 
         protected function addTerm($name, $taxonomy): int|string
         {
-            $termTable         = $this->getTermsTable();
+            $termsTable         = $this->getTermsTable();
             $termTaxonomyTable = $this->getTermTaxonomyTable();
 
-            $termId = $termTable->tableIns()->insertGetId([
-                $termTable->getNameField()      => $name,
-                $termTable->getSlugField()      => 'term-' . hrtime(true),
-                $termTable->getTermGroupField() => 0,
+            $termId = $termsTable->tableIns()->insertGetId([
+                $termsTable->getNameField()      => $name,
+                $termsTable->getSlugField()      => 'term-' . hrtime(true),
+                $termsTable->getTermGroupField() => 0,
             ]);
 
             return $termTaxonomyTable->tableIns()->insertGetId([
-                $termTaxonomyTable->getTermIdField()   => $termId,
-                $termTaxonomyTable->getTaxonomyField() => $taxonomy,
+                $termTaxonomyTable->getTermIdField()      => $termId,
+                $termTaxonomyTable->getTaxonomyField()    => $taxonomy,
+                $termTaxonomyTable->getDescriptionField() => '',
             ]);
         }
 
         public function getTermsByTaxonomy(string $taxonomy, array $names): array
         {
             $termTaxonomyTable = $this->getTermTaxonomyTable();
-            $termTable         = $this->getTermsTable();
+            $termsTable         = $this->getTermsTable();
 
             $whereNames = [];
 
@@ -540,7 +541,7 @@
             {
                 $whereNames = [
                     [
-                        $termTable->getName() . '.' . $termTable->getNameField(),
+                        $termsTable->getName() . '.' . $termsTable->getNameField(),
                         'in',
                         $names,
                     ],
@@ -559,10 +560,10 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
             */
             $items = $termTaxonomyTable->tableIns()->field(implode(',', [
                 $termTaxonomyTable->getName() . '.' . $termTaxonomyTable->getTermTaxonomyIdField(),
-                $termTable->getName() . '.' . $termTable->getNameField() . ' as term_name',
+                $termsTable->getName() . '.' . $termsTable->getNameField() . ' as term_name',
             ]))->where($termTaxonomyTable->getName() . '.' . $termTaxonomyTable->getTaxonomyField(), '=', $taxonomy)
                 ->where($whereNames)
-                ->join($termTable->getName(), $termTaxonomyTable->getName() . '.' . $termTaxonomyTable->getTermIdField() . ' = ' . $termTable->getName() . '.' . $termTable->getTermIdField(), 'left')
+                ->join($termsTable->getName(), $termTaxonomyTable->getName() . '.' . $termTaxonomyTable->getTermIdField() . ' = ' . $termsTable->getName() . '.' . $termsTable->getTermIdField(), 'left')
                 ->select();
 
             $result = [];
@@ -639,7 +640,7 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
         public function deleteAllTags(): void
         {
             $termTaxonomyTable      = $this->getTermTaxonomyTable();
-            $termTable              = $this->getTermsTable();
+            $termsTable              = $this->getTermsTable();
             $termmetaTable          = $this->getTermmetaTable();
             $termRelationshipsTable = $this->getTermRelationshipsTable();
 
@@ -659,7 +660,7 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
 
             $termTaxonomyTable->tableIns()->where($termTaxonomyTable->getTermIdField(), 'in', $term_ids)->delete();
 
-            $termTable->tableIns()->where($termTable->getTermIdField(), 'in', $term_ids)->delete();
+            $termsTable->tableIns()->where($termsTable->getTermIdField(), 'in', $term_ids)->delete();
 
             $termmetaTable->tableIns()->where($termmetaTable->getTermIdField(), 'in', $term_ids)->delete();
 
@@ -1458,7 +1459,7 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
         public function purgePostMeta(): void
         {
             $termTaxonomyTable      = $this->getTermTaxonomyTable();
-            $termTable              = $this->getTermsTable();
+            $termsTable              = $this->getTermsTable();
             $termmetaTable          = $this->getTermmetaTable();
             $termRelationshipsTable = $this->getTermRelationshipsTable();
             $postsTable             = $this->getPostsTable();
@@ -1478,7 +1479,7 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
         public function updateTagsCount(): void
         {
             $termTaxonomyTable      = $this->getTermTaxonomyTable();
-            $termTable              = $this->getTermsTable();
+            $termsTable              = $this->getTermsTable();
             $termmetaTable          = $this->getTermmetaTable();
             $termRelationshipsTable = $this->getTermRelationshipsTable();
             $postsTable             = $this->getPostsTable();
@@ -1781,19 +1782,17 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
                             $postmetaTable->getMetaValueField() => round(bcsqrt($k)) * rand($viewsMin, $viewsMax),
                         ];
 
-                        echo implode('', [
+                        $this->getMysqlClient()->logInfo(implode('', [
                             $id,
                             '-更新【none-force】',
-                            PHP_EOL,
-                        ]);
+                        ]));
                     }
                     else
                     {
-                        echo implode('', [
+                        $this->getMysqlClient()->logInfo(implode('', [
                             $id,
                             '-没更新【none-force】',
-                            PHP_EOL,
-                        ]);
+                        ]));
                     }
                 }
 
@@ -1808,11 +1807,10 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
                         $postmetaTable->getMetaValueField() => round(bcsqrt($k)) * rand($viewsMin, $viewsMax),
                     ];
 
-                    echo implode('', [
+                    $this->getMysqlClient()->logInfo(implode('', [
                         $id,
                         '-更新【force】',
-                        PHP_EOL,
-                    ]);
+                    ]));
                 }
 
                 $postmetaTable->tableIns()->where([
@@ -1880,12 +1878,11 @@ WHERE `wp_term_taxonomy`.`taxonomy` = 'category'
                         ->whereTime($postsTable->getPostDateField(), '-1 month')->update($dataToInsert);
                 }
 
-                echo implode('', [
+                $this->getMysqlClient()->logInfo(implode('', [
                     $id['ID'],
                     '-',
-                    $c ? '已更新: '.$date_ : '不更',
-                    PHP_EOL,
-                ]);
+                    $c ? '已更新: ' . $date_ : '不更',
+                ]));
 
                 $itemPerTimes--;
 

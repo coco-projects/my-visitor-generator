@@ -360,6 +360,50 @@
             return $dates;
         }
 
+        protected static function generateRandomTimes1($date, $count): array
+        {
+            if ($count <= 0)
+            {
+                return [];
+            }
+
+            // 1. 计算当天时间范围
+            $startTimestamp = strtotime($date);
+            $endTimestamp   = strtotime(explode(' ', $date)[0] . ' 23:59:59');
+
+            // 2. 使用临时文件生成随机时间戳（完全不占 PHP 内存）
+            $tmpFile = tempnam(sys_get_temp_dir(), 'matomo_random_times_');
+            $handle  = fopen($tmpFile, 'w');
+
+            for ($i = 0; $i < $count; $i++)
+            {
+                $ts = rand($startTimestamp, $endTimestamp);
+                fwrite($handle, $ts . "\n");        // 只写整数，每行一个
+            }
+            fclose($handle);
+
+            // 3. 用 Linux 系统 sort 命令排序（外部排序，用磁盘，不吃 PHP 内存）
+            //    -n 按数字排序，非常省内存，即使几百万条也稳
+            $sortedFile = $tmpFile . '.sorted';
+            exec("sort -n {$tmpFile} > {$sortedFile} 2>/dev/null");
+
+            // 4. 读回已排序的时间戳，转成字符串（最终还是要返回数组，无法避免）
+            $randomTimes = [];
+            $handle      = fopen($sortedFile, 'r');
+            while (($line = fgets($handle)) !== false)
+            {
+                $ts            = (int)trim($line);
+                $randomTimes[] = date('Y-m-d H:i:s', $ts);
+            }
+            fclose($handle);
+
+            // 5. 清理临时文件
+            @unlink($tmpFile);
+            @unlink($sortedFile);
+
+            return $randomTimes;
+        }
+
         /**
          * 生成一天中随机的时间点
          *
@@ -370,6 +414,10 @@
          */
         protected static function generateRandomTimes($date, $count): array
         {
+            if ($count <= 0)
+            {
+                return [];
+            }
             // 获取日期的开始和结束时间
             $startTimestamp = strtotime($date);
             $endTimestamp   = strtotime(explode(' ', $date)[0] . ' 23:59:59');

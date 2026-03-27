@@ -136,17 +136,17 @@
         },
         {
             "name": "coco-project/matomo-client",
-            "version": "v1.0.6",
-            "version_normalized": "1.0.6.0",
+            "version": "v1.0.7",
+            "version_normalized": "1.0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coco-projects/matomo-client.git",
-                "reference": "a68bf9fe4159a434bd54f8a75dc2d9c37d587c82"
+                "reference": "ccbdd31a6273944003631dea865d33dd6478c56e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coco-projects/matomo-client/zipball/a68bf9fe4159a434bd54f8a75dc2d9c37d587c82",
-                "reference": "a68bf9fe4159a434bd54f8a75dc2d9c37d587c82",
+                "url": "https://api.github.com/repos/coco-projects/matomo-client/zipball/ccbdd31a6273944003631dea865d33dd6478c56e",
+                "reference": "ccbdd31a6273944003631dea865d33dd6478c56e",
                 "shasum": ""
             },
             "require": {
@@ -160,7 +160,7 @@
                 "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.8"
             },
-            "time": "2025-09-11T09:47:33+00:00",
+            "time": "2025-10-31T14:39:29+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -175,23 +175,23 @@
             ],
             "support": {
                 "issues": "https://github.com/coco-projects/matomo-client/issues",
-                "source": "https://github.com/coco-projects/matomo-client/tree/v1.0.6"
+                "source": "https://github.com/coco-projects/matomo-client/tree/v1.0.7"
             },
             "install-path": "../coco-project/matomo-client"
         },
         {
             "name": "coco-project/simple-page-downloader",
-            "version": "v1.0.16",
-            "version_normalized": "1.0.16.0",
+            "version": "v1.0.17",
+            "version_normalized": "1.0.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coco-projects/simple-page-downloader.git",
-                "reference": "2068af3739be9c16632297075baf12a3b0d75044"
+                "reference": "a5c056017c1afa7453cd1fd0694c7f89f0c5afff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coco-projects/simple-page-downloader/zipball/2068af3739be9c16632297075baf12a3b0d75044",
-                "reference": "2068af3739be9c16632297075baf12a3b0d75044",
+                "url": "https://api.github.com/repos/coco-projects/simple-page-downloader/zipball/a5c056017c1afa7453cd1fd0694c7f89f0c5afff",
+                "reference": "a5c056017c1afa7453cd1fd0694c7f89f0c5afff",
                 "shasum": ""
             },
             "require": {
@@ -206,7 +206,7 @@
                 "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.8"
             },
-            "time": "2025-05-23T14:36:49+00:00",
+            "time": "2025-10-31T14:25:15+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -222,7 +222,7 @@
             "description": "page downloader",
             "support": {
                 "issues": "https://github.com/coco-projects/simple-page-downloader/issues",
-                "source": "https://github.com/coco-projects/simple-page-downloader/tree/v1.0.16"
+                "source": "https://github.com/coco-projects/simple-page-downloader/tree/v1.0.17"
             },
             "install-path": "../coco-project/simple-page-downloader"
         },
@@ -271,17 +271,17 @@
         },
         {
             "name": "coco-project/table-manager",
-            "version": "v1.0.13",
-            "version_normalized": "1.0.13.0",
+            "version": "v1.0.17",
+            "version_normalized": "1.0.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coco-projects/table-manager.git",
-                "reference": "9886da5c2b2a45ac98984586b1e6c271645ecfa9"
+                "reference": "8fec4875fcfd6a3060486b45945e914bdd6f9300"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coco-projects/table-manager/zipball/9886da5c2b2a45ac98984586b1e6c271645ecfa9",
-                "reference": "9886da5c2b2a45ac98984586b1e6c271645ecfa9",
+                "url": "https://api.github.com/repos/coco-projects/table-manager/zipball/8fec4875fcfd6a3060486b45945e914bdd6f9300",
+                "reference": "8fec4875fcfd6a3060486b45945e914bdd6f9300",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +295,7 @@
                 "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.8"
             },
-            "time": "2025-01-21T03:06:53+00:00",
+            "time": "2026-03-26T08:53:58+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -310,7 +310,7 @@
             ],
             "support": {
                 "issues": "https://github.com/coco-projects/table-manager/issues",
-                "source": "https://github.com/coco-projects/table-manager/tree/v1.0.13"
+                "source": "https://github.com/coco-projects/table-manager/tree/v1.0.17"
             },
             "install-path": "../coco-project/table-manager"
         },
@@ -403,17 +403,17 @@
         },
         {
             "name": "coco-project/wp",
-            "version": "v1.0.36",
-            "version_normalized": "1.0.36.0",
+            "version": "v1.0.42",
+            "version_normalized": "1.0.42.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coco-projects/wp.git",
-                "reference": "7a3f3da23bb35dda7ea7d59b3486d67c4124bd6f"
+                "reference": "8129ea6c24f3297d9fdd8186631c916a299e42fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coco-projects/wp/zipball/7a3f3da23bb35dda7ea7d59b3486d67c4124bd6f",
-                "reference": "7a3f3da23bb35dda7ea7d59b3486d67c4124bd6f",
+                "url": "https://api.github.com/repos/coco-projects/wp/zipball/8129ea6c24f3297d9fdd8186631c916a299e42fe",
+                "reference": "8129ea6c24f3297d9fdd8186631c916a299e42fe",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +428,7 @@
                 "phpunit/phpunit": "^9.6",
                 "squizlabs/php_codesniffer": "^3.8"
             },
-            "time": "2025-09-24T03:47:14+00:00",
+            "time": "2026-03-24T08:05:32+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -443,7 +443,7 @@
             ],
             "support": {
                 "issues": "https://github.com/coco-projects/wp/issues",
-                "source": "https://github.com/coco-projects/wp/tree/v1.0.36"
+                "source": "https://github.com/coco-projects/wp/tree/v1.0.42"
             },
             "install-path": "../coco-project/wp"
         },
@@ -730,17 +730,17 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.8.0",
-            "version_normalized": "2.8.0.0",
+            "version": "2.9.0",
+            "version_normalized": "2.9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "21dc724a0583619cd1652f673303492272778051"
+                "reference": "7d0ed42f28e42d61352a7a79de682e5e67fec884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/21dc724a0583619cd1652f673303492272778051",
-                "reference": "21dc724a0583619cd1652f673303492272778051",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/7d0ed42f28e42d61352a7a79de682e5e67fec884",
+                "reference": "7d0ed42f28e42d61352a7a79de682e5e67fec884",
                 "shasum": ""
             },
             "require": {
@@ -756,12 +756,13 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
                 "http-interop/http-factory-tests": "0.9.0",
+                "jshttp/mime-db": "1.54.0.1",
                 "phpunit/phpunit": "^8.5.44 || ^9.6.25"
             },
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
             },
-            "time": "2025-08-23T21:21:41+00:00",
+            "time": "2026-03-10T16:41:02+00:00",
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -829,7 +830,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.8.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.9.0"
             },
             "funding": [
                 {
@@ -849,30 +850,30 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.5",
-            "version_normalized": "2.0.5.0",
+            "version": "v2.0.10",
+            "version_normalized": "2.0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "3832547db6e0e2f8bb03d4093857b378c66eceed"
+                "reference": "870fc81d2f879903dfc5b60bf8a0f94a1609e669"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/3832547db6e0e2f8bb03d4093857b378c66eceed",
-                "reference": "3832547db6e0e2f8bb03d4093857b378c66eceed",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/870fc81d2f879903dfc5b60bf8a0f94a1609e669",
+                "reference": "870fc81d2f879903dfc5b60bf8a0f94a1609e669",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.1"
             },
             "require-dev": {
-                "illuminate/support": "^10.0|^11.0|^12.0",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
                 "nesbot/carbon": "^2.67|^3.0",
-                "pestphp/pest": "^2.36|^3.0",
+                "pestphp/pest": "^2.36|^3.0|^4.0",
                 "phpstan/phpstan": "^2.0",
-                "symfony/var-dumper": "^6.2.0|^7.0.0"
+                "symfony/var-dumper": "^6.2.0|^7.0.0|^8.0.0"
             },
-            "time": "2025-09-22T17:29:40+00:00",
+            "time": "2026-02-20T19:59:49+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1042,17 +1043,17 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.10.0",
-            "version_normalized": "2.10.0.0",
+            "version": "2.11.0",
+            "version_normalized": "2.11.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5cf826f2991858b54d5c3809bee745560a1042a7"
+                "reference": "37308608e599f34a1a4845b16440047ec98a172a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5cf826f2991858b54d5c3809bee745560a1042a7",
-                "reference": "5cf826f2991858b54d5c3809bee745560a1042a7",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/37308608e599f34a1a4845b16440047ec98a172a",
+                "reference": "37308608e599f34a1a4845b16440047ec98a172a",
                 "shasum": ""
             },
             "require": {
@@ -1070,7 +1071,7 @@
                 "graylog2/gelf-php": "^1.4.2 || ^2@dev",
                 "guzzlehttp/guzzle": "^7.4",
                 "guzzlehttp/psr7": "^2.2",
-                "mongodb/mongodb": "^1.8",
+                "mongodb/mongodb": "^1.8 || ^2.0",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "phpspec/prophecy": "^1.15",
                 "phpstan/phpstan": "^1.10",
@@ -1098,7 +1099,7 @@
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
-            "time": "2024-11-12T12:43:37+00:00",
+            "time": "2026-01-01T13:05:00+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1131,7 +1132,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.10.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.11.0"
             },
             "funding": [
                 {
@@ -1723,23 +1724,23 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v6.4.24",
-            "version_normalized": "6.4.24.0",
+            "version": "v7.4.6",
+            "version_normalized": "7.4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "9b784413143701aa3c94ac1869a159a9e53e8761"
+                "reference": "2e7c52c647b406e2107dd867db424a4dbac91864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/9b784413143701aa3c94ac1869a159a9e53e8761",
-                "reference": "9b784413143701aa3c94ac1869a159a9e53e8761",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/2e7c52c647b406e2107dd867db424a4dbac91864",
+                "reference": "2e7c52c647b406e2107dd867db424a4dbac91864",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1"
+                "php": ">=8.2"
             },
-            "time": "2025-07-10T08:14:14+00:00",
+            "time": "2026-02-17T07:53:42+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1771,7 +1772,7 @@
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v6.4.24"
+                "source": "https://github.com/symfony/css-selector/tree/v7.4.6"
             },
             "funding": [
                 {
@@ -1865,17 +1866,17 @@
         },
         {
             "name": "tedivm/jshrink",
-            "version": "v1.8.0",
-            "version_normalized": "1.8.0.0",
+            "version": "v1.8.1",
+            "version_normalized": "1.8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tedious/JShrink.git",
-                "reference": "29ee510d684c22060040f4260a527206eb8199f1"
+                "reference": "f76454d4c48ddae6354a2f0eeb16633d4e755c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tedious/JShrink/zipball/29ee510d684c22060040f4260a527206eb8199f1",
-                "reference": "29ee510d684c22060040f4260a527206eb8199f1",
+                "url": "https://api.github.com/repos/tedious/JShrink/zipball/f76454d4c48ddae6354a2f0eeb16633d4e755c9a",
+                "reference": "f76454d4c48ddae6354a2f0eeb16633d4e755c9a",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1887,7 @@
                 "php-coveralls/php-coveralls": "^2.5.0",
                 "phpunit/phpunit": "^9|^10"
             },
-            "time": "2025-07-28T17:09:23+00:00",
+            "time": "2025-11-20T14:34:30+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1912,7 +1913,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tedious/JShrink/issues",
-                "source": "https://github.com/tedious/JShrink/tree/v1.8.0"
+                "source": "https://github.com/tedious/JShrink/tree/v1.8.1"
             },
             "funding": [
                 {
@@ -1928,17 +1929,17 @@
         },
         {
             "name": "topthink/think-helper",
-            "version": "v3.1.11",
-            "version_normalized": "3.1.11.0",
+            "version": "v3.1.12",
+            "version_normalized": "3.1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-helper.git",
-                "reference": "1d6ada9b9f3130046bf6922fe1bd159c8d88a33c"
+                "reference": "fe277121112a8f1c872e169a733ca80bb11c4acb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-helper/zipball/1d6ada9b9f3130046bf6922fe1bd159c8d88a33c",
-                "reference": "1d6ada9b9f3130046bf6922fe1bd159c8d88a33c",
+                "url": "https://api.github.com/repos/top-think/think-helper/zipball/fe277121112a8f1c872e169a733ca80bb11c4acb",
+                "reference": "fe277121112a8f1c872e169a733ca80bb11c4acb",
                 "shasum": ""
             },
             "require": {
@@ -1947,7 +1948,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
             },
-            "time": "2025-04-07T06:55:59+00:00",
+            "time": "2025-12-26T09:58:29+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1971,7 +1972,7 @@
             "description": "The ThinkPHP6 Helper Package",
             "support": {
                 "issues": "https://github.com/top-think/think-helper/issues",
-                "source": "https://github.com/top-think/think-helper/tree/v3.1.11"
+                "source": "https://github.com/top-think/think-helper/tree/v3.1.12"
             },
             "install-path": "../topthink/think-helper"
         },
