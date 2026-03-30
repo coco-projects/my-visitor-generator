@@ -94,8 +94,8 @@ class ComposerStaticInit93cd4019afa75d320f2660a9161e3e59
         ),
         'think\\' => 
         array (
-            0 => __DIR__ . '/..' . '/topthink/think-orm/src',
-            1 => __DIR__ . '/..' . '/topthink/think-helper/src',
+            0 => __DIR__ . '/..' . '/topthink/think-helper/src',
+            1 => __DIR__ . '/..' . '/topthink/think-orm/src',
         ),
         'Symfony\\Component\\CssSelector\\' => 
         array (
@@ -209,15 +209,15 @@ class ComposerStaticInit93cd4019afa75d320f2660a9161e3e59
         'Coco\\examples\\' => 
         array (
             0 => __DIR__ . '/..' . '/coco-project/html-builder/examples',
-            1 => __DIR__ . '/..' . '/coco-project/logger/examples',
-            2 => __DIR__ . '/..' . '/coco-project/magic-access/examples',
+            1 => __DIR__ . '/..' . '/coco-project/magic-access/examples',
+            2 => __DIR__ . '/..' . '/coco-project/simple-page-downloader/examples',
             3 => __DIR__ . '/..' . '/coco-project/snowflake/examples',
-            4 => __DIR__ . '/..' . '/coco-project/timer/examples',
-            5 => __DIR__ . '/..' . '/coco-project/tree/examples',
-            6 => __DIR__ . '/..' . '/coco-project/simple-page-downloader/examples',
-            7 => __DIR__ . '/..' . '/coco-project/table-manager/examples',
-            8 => __DIR__ . '/..' . '/coco-project/matomo-client/examples',
-            9 => __DIR__ . '/..' . '/coco-project/wp/examples',
+            4 => __DIR__ . '/..' . '/coco-project/table-manager/examples',
+            5 => __DIR__ . '/..' . '/coco-project/timer/examples',
+            6 => __DIR__ . '/..' . '/coco-project/tree/examples',
+            7 => __DIR__ . '/..' . '/coco-project/wp/examples',
+            8 => __DIR__ . '/..' . '/coco-project/logger/examples',
+            9 => __DIR__ . '/..' . '/coco-project/matomo-client/examples',
         ),
     );
 
