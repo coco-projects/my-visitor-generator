@@ -111,8 +111,8 @@ class ComposerStaticInit93cd4019afa75d320f2660a9161e3e59
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -208,16 +208,16 @@ class ComposerStaticInit93cd4019afa75d320f2660a9161e3e59
         ),
         'Coco\\examples\\' => 
         array (
-            0 => __DIR__ . '/..' . '/coco-project/html-builder/examples',
+            0 => __DIR__ . '/..' . '/coco-project/timer/examples',
             1 => __DIR__ . '/..' . '/coco-project/magic-access/examples',
-            2 => __DIR__ . '/..' . '/coco-project/simple-page-downloader/examples',
-            3 => __DIR__ . '/..' . '/coco-project/snowflake/examples',
-            4 => __DIR__ . '/..' . '/coco-project/table-manager/examples',
-            5 => __DIR__ . '/..' . '/coco-project/timer/examples',
-            6 => __DIR__ . '/..' . '/coco-project/tree/examples',
-            7 => __DIR__ . '/..' . '/coco-project/wp/examples',
-            8 => __DIR__ . '/..' . '/coco-project/logger/examples',
-            9 => __DIR__ . '/..' . '/coco-project/matomo-client/examples',
+            2 => __DIR__ . '/..' . '/coco-project/logger/examples',
+            3 => __DIR__ . '/..' . '/coco-project/simple-page-downloader/examples',
+            4 => __DIR__ . '/..' . '/coco-project/snowflake/examples',
+            5 => __DIR__ . '/..' . '/coco-project/tree/examples',
+            6 => __DIR__ . '/..' . '/coco-project/table-manager/examples',
+            7 => __DIR__ . '/..' . '/coco-project/matomo-client/examples',
+            8 => __DIR__ . '/..' . '/coco-project/html-builder/examples',
+            9 => __DIR__ . '/..' . '/coco-project/wp/examples',
         ),
     );
 

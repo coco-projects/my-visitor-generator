@@ -12,7 +12,7 @@ return array(
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
-    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src', $vendorDir . '/psr/http-factory/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
@@ -36,5 +36,5 @@ return array(
     'Coco\\magicAccess\\' => array($vendorDir . '/coco-project/magic-access/src'),
     'Coco\\logger\\' => array($vendorDir . '/coco-project/logger/src'),
     'Coco\\htmlBuilder\\' => array($vendorDir . '/coco-project/html-builder/src'),
-    'Coco\\examples\\' => array($vendorDir . '/coco-project/html-builder/examples', $vendorDir . '/coco-project/magic-access/examples', $vendorDir . '/coco-project/simple-page-downloader/examples', $vendorDir . '/coco-project/snowflake/examples', $vendorDir . '/coco-project/table-manager/examples', $vendorDir . '/coco-project/timer/examples', $vendorDir . '/coco-project/tree/examples', $vendorDir . '/coco-project/wp/examples', $vendorDir . '/coco-project/logger/examples', $vendorDir . '/coco-project/matomo-client/examples'),
+    'Coco\\examples\\' => array($vendorDir . '/coco-project/timer/examples', $vendorDir . '/coco-project/magic-access/examples', $vendorDir . '/coco-project/logger/examples', $vendorDir . '/coco-project/simple-page-downloader/examples', $vendorDir . '/coco-project/snowflake/examples', $vendorDir . '/coco-project/tree/examples', $vendorDir . '/coco-project/table-manager/examples', $vendorDir . '/coco-project/matomo-client/examples', $vendorDir . '/coco-project/html-builder/examples', $vendorDir . '/coco-project/wp/examples'),
 );

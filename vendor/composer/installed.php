@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'coco-project/logger' => array(
-            'pretty_version' => 'v1.0.9',
-            'version' => '1.0.9.0',
-            'reference' => 'b26044904a5003ca5710be9ad9a80591338ced02',
+            'pretty_version' => 'v1.0.10',
+            'version' => '1.0.10.0',
+            'reference' => '4e5c852c936fbf25e2bf63e302e76caf54759813',
             'type' => 'library',
             'install_path' => __DIR__ . '/../coco-project/logger',
             'aliases' => array(),
@@ -173,9 +173,9 @@
             'dev_requirement' => false,
         ),
         'monolog/monolog' => array(
-            'pretty_version' => '3.10.0',
-            'version' => '3.10.0.0',
-            'reference' => 'b321dd6749f0bf7189444158a3ce785cc16d69b0',
+            'pretty_version' => '2.11.0',
+            'version' => '2.11.0.0',
+            'reference' => '37308608e599f34a1a4845b16440047ec98a172a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(),
@@ -280,7 +280,7 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
